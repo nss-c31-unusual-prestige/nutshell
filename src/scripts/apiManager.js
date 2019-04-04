@@ -12,7 +12,7 @@ export default {
     },
 
     postAll: (key, objectId) => {
-        
+
         return fetch(`${apiURL}/${key}`, {
             method: "POST",
             headers: {
