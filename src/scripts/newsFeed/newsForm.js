@@ -6,7 +6,7 @@ let articleContainer = document.getElementById("articles-section")
 export default {
     newsForm(){
         let newsDocFragment = document.createDocumentFragment()
-        let newsArticle = document.createElement("article")
+        let newsArticle = HtmlBuilder.elementBuilder("article", "newsFormArticle")
         newsArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Title: ", "newsTitle"))
         newsArticle.appendChild(HtmlBuilder.elementBuilder("input", "newsTitle", "Title", "newsTitle"))
         newsArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "URL: ", "newsUrl"))

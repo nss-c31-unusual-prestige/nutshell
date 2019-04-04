@@ -1,0 +1,4 @@
+#newsFormArticle{
+    display: flex;
+    flex-direction: column;
+}
