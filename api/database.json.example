@@ -4,5 +4,18 @@
   "articles": [],
   "friends": [],
   "tasks": [],
-  "events": []
+  "events": [
+    {
+        "id": 1,
+        "eventName": "bonaroo",
+        "eventDate": "06/10/2019",
+        "eventLocation": "Manchester, TN"
+    },
+    {
+      "id": 2,
+      "eventName": "electric forest",
+      "eventDate": "06/27/2019",
+      "eventLocation": "Double JJ Resort, MI"
+  }
+  ]
 }
