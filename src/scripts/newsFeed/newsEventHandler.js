@@ -1,3 +1,6 @@
+import apiManager from "../apiManager.js"
+
+
 export default {
     handleSave() {
         let newsTitle = document.getElementById("newsTitle")
@@ -11,5 +14,6 @@ export default {
             summary: newsSummary.value
         }
         console.log(newArticle)
+        apiManager.postAll("articles", newArticle)
     }
 }
