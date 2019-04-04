@@ -1,0 +1,85 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last"
+    },
+    {
+      "id": 2,
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last"
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 3
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 4
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 5
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 6
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 7
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 8
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 9
+    },
+    {
+      "email": "user@example.com",
+      "user": "username",
+      "name": "First Last",
+      "id": 10
+    }
+  ],
+  "messages": [
+    {
+      "id": 1,
+      "message": "You have won!! Click here and enter your email to claim your 10,000 cash prize!!!!!!!",
+      "userID": 1
+  },
+  {
+    "id": 2,
+    "message": "OMGWTFBBQ!",
+    "userID": 2
+},
+{
+  "id": 3,
+  "message": "It's the late 90s and this is AOL chat.",
+  "userID": 3
+}
+],
+  "articles": [],
+  "friends": [],
+  "tasks": [],
+  "events": []
+}
