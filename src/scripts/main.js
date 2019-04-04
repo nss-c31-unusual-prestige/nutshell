@@ -16,3 +16,4 @@ let testObject = {
 
 
 apiManager.postAll("users", testObject)
+apiManager.delFetch("users", 2)
