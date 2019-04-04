@@ -1,19 +1,6 @@
-import apiManager from "./apiManager.js";
+import messageManager from "./messages.js"
 
-let testObject = {
-    email: "user@example.com",
-      user: "username",
-      name: "First Last"
-}
+//calls messageManger function
+messageManager.createMessages("messages");
 
-// apiManager.getAll("users").then(usersArray => {
-//             console.log(usersArray)
-//         })
-
-// apiManager.getOne("users", 2).then(user =>{
-//     console.log(user)
-// });
-
-
-apiManager.postAll("users", testObject)
-apiManager.delFetch("users", 2)
+// apiManager.delFetch("users", 2)
