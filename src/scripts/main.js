@@ -1,4 +1,5 @@
 import apiManager from "./apiManager.js";
 import newsFeedDOM from "./newsFeed/newsDomManage.js"
+import newsForm from "./newsFeed/newsForm.js"
 
-newsFeedDOM.listAllNews()
+newsForm.newsForm()
