@@ -1,7 +1,7 @@
-import apiManager from "../apiManager";
-import HtmlBuilder from "../HtmlBuilder";
+import apiManager from "../apiManager.js";
+import HtmlBuilder from "../HtmlBuilder.js";
 
-let display = document.querySelectorAll("#tasks-section")
+let display = document.querySelector("#tasks-section")
 
 export default {
     listAllTask() {
