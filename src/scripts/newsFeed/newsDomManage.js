@@ -13,8 +13,7 @@ export default {
             childArticle.appendChild(HtmlBuilder.elementBuilder("article", `newsTitle--${article.id}`, `${article.newsTitle}`))
             childArticle.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `${article.summary}`))
             childArticle.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `${article.url}`))
-            
-           
+
         }))},
         childArticleContainer() {
             let articleContainer = document.getElementById("articles-section");
