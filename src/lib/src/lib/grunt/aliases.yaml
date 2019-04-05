@@ -3,8 +3,3 @@ default:
   - "http-server"
   - "bgShell:launchAPI"
   - "watch"
-default:
-  - "eslint"
-  - "http-server"
-  - "bgShell:launchAPI"
-  - "watch"

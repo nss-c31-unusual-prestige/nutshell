@@ -1,7 +1,7 @@
 import apiManger from "../apiManager.js"
 import taskDom from "./tasksDomBuilder"
 
-export default{
+export default {
     handleSave() {
         let name = document.getElementById("newName")
         let newDescription = document.getElementById("newDescription")
@@ -14,6 +14,6 @@ export default{
         }
         console.log(newSection)
         apiManger.postAll("tasks", newSection)
-        .then(() => taskDom.listAllTask())
+            .then(() => taskDom.listAllTask())
     }
 }

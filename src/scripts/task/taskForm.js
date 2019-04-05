@@ -1,29 +1,26 @@
 import HtmlBuilder from "../HtmlBuilder"
-import apiManger from "./apiManager"
+import apiManger from "../apiManager"
 import formEvent from "./taskEventHandler.js"
 
-let taskSection = document.getElementById ("tasks-section")
+let taskSection = document.getElementById("tasks-section")
 
-export default{
+export default {
     taskFormSection() {
         let newDocFragment = document.createDocumentFragment()
-        // let newSection =HtmlBuilder.elementBuilder("section", "newFormSection")
 
         newDocFragment.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:", "newName"))
-        newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", "newName"))
+        newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", ""))
 
         newDocFragment.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Decription:", "newDescription"))
-        newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newDescription", "decription:", "newDescription"))
+        newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newDescription", "decription:", ""))
 
         newDocFragment.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:", "newCompleteDate"))
-        newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", "newCompleteDate"))
+        newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
 
-        let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "saveSection", "Save")
+        let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Submit", "Save")
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
-
-
-        //newDocFragment.appendChild(newSection)
         taskSection.appendChild(newDocFragment)
+        taskSection.appendChild(saveButtonForm)
     }
 }
