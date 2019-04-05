@@ -3,14 +3,14 @@ import taskDom from "./tasksDomBuilder"
 
 export default{
     handleSave() {
-        let name = document.getElementById("name")
-        let description = document.getElementById("description")
-        let completeDate = document.getElementById("completeDate")
+        let newName = document.getElementById("newName")
+        let newDescription = document.getElementById("newDescription")
+        let newCompleteDate = document.getElementById("newCompleteDate")
 
         let newSection = {
-            name = name.value,
-            description = description.value,
-            completeDate = completeDate.value
+            newName = newName.value,
+            newDescription = newDescription.value,
+            newCompleteDate = newCompleteDate.value
         }
         console.log(newSection)
         apiManger.postAll("tasks", newSection)

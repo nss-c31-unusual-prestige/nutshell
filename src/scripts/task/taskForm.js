@@ -9,16 +9,16 @@ export default{
         let newDocFragment = document.createElement()
         let newSection =HtmlBuilder.elementBuilder("tesk", "newDocFragment")
 
-        newSection.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Task Name:", "taskName"))
-        newSection.appendChild(HtmlBuilder.elementBuilder("input", "taskName", "Task Name:", "taskName"))
+        newSection.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:", "newName"))
+        newSection.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", "newName"))
 
-        newSection.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Task Decription:", "taskDescription"))
-        newSection.appendChild(HtmlBuilder.elementBuilder("input", "taskDescription", "Task Decription:", "taskDescription"))
+        newSection.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Decription:", "newDescription"))
+        newSection.appendChild(HtmlBuilder.elementBuilder("input", "newDescription", "decription:", "newDescription"))
 
-        newSection.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Task Complete Date:", "taskCompleteDate"))
-        newSection.appendChild(HtmlBuilder.elementBuilder("input", "taskCompleteDate", "Task Complete Date:", "taskCompleteDate"))
+        newSection.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:", "newCompleteDate"))
+        newSection.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", "newCompleteDate"))
 
-        let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "saveSection", "SaveButton")
+        let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "saveSection", "Save")
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
 
