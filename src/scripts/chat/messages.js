@@ -2,19 +2,15 @@ import apiManager from "../apiManager";
 import HtmlBuilder from "../HtmlBuilder";
 import messageField from "./messageField";
 
-    //reference to the section of the DOM the messageBox will be appended to after all the messages have been built. Stored as a property of the module.
-    const messageSection = document.getElementById("messages-section");
-    //(elementType, elementId, elementTextContent, elementValue). Section all messages will appear on.
-    const messageBox = HtmlBuilder.elementBuilder("section", "message--section", undefined, undefined);
+//reference to the section of the DOM the messageBox will be appended to after all the messages have been built. Stored as a property of the module.
+const messageSection = document.getElementById("messages-section");
+//(elementType, elementId, elementTextContent, elementValue). Section all messages will appear on.
+const messageBox = HtmlBuilder.elementBuilder("section", "message--section", undefined, undefined);
 
-    //reference to dom fragment that will be appended to the box.
-    const messageFragment = document.createDocumentFragment();
+//reference to dom fragment that will be appended to the box.
+const messageFragment = document.createDocumentFragment();
 
 export default {
-    //initialize chatbox.
-    createChat: () => {
-        messageSection.appendChild(messageBox);
-    },
     //display current messages.
     printMessages: () => {
         HtmlBuilder.clearElement(messageBox);
@@ -28,6 +24,14 @@ export default {
             })
             //append fragment to messageBox.
             messageBox.appendChild(messageFragment);
+            console.log(messageBox);
         })
+    },
+    //initialize chatbox.
+    createChat: () => {
+        const chatForm = messageField.createMessageForm()
+        messageSection.appendChild(messageBox);
+        messageSection.appendChild(chatForm);
+        this.printMessages();
     }
 }
