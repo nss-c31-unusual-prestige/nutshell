@@ -14,7 +14,7 @@ export default {
             description: description.value,
             completeDate: completeDate.value
         }
-        console.log(newSection)
+        //console.log(newSection)
         apiManger.postAll("tasks", newSection)
             .then(() => taskDom.listAllTask())
     }

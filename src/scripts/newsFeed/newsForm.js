@@ -6,7 +6,6 @@ import formEvent from "./newsEventHandler.js"
 let articleContainer = document.getElementById("articles-section")
 
 export default {
-    
     newsForm() {
         let newsDocFragment = document.createDocumentFragment()
         let newsArticle = HtmlBuilder.elementBuilder("article", "newsFormArticle")
