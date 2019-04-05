@@ -5,7 +5,7 @@ import HtmlBuilder from "../HtmlBuilder.js";
 export default {
     listAllTask() {
         let childSection = HtmlBuilder.elementBuilder("section", "childTasksSection")
-        // HtmlBuilder.clearElement(childSection)
+        HtmlBuilder.clearElement(childSection)
         apiManager.getAll("tasks")
             .then(tasks => tasks.forEach(task => {
                 childSection.appendChild(HtmlBuilder.elementBuilder("section", `newName--${task.id}`, `${task.name}`))
