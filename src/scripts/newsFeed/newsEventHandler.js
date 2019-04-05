@@ -12,11 +12,15 @@ export default {
         let newArticle = {
             newsTitle: newsTitle.value,
             url: newsUrl.value,
-            summary: newsSummary.value
+            summary: newsSummary.value,
+            timeStamp: new Date()
         }
         console.log(newArticle)
         // Posting new article into database and displaying all articles
         apiManager.postAll("articles", newArticle)
         .then(() => newsDom.listAllNews())
+    },
+    handleEdit() {
+        
     }
 }
