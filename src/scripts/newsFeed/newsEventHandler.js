@@ -26,11 +26,11 @@ export default {
         // let newsTitle = document.getElementById("newsTitle")
         // let newsUrl = document.getElementById("newsUrl")
         // let newsSummary = document.getElementById("newsSummary")
-
+console.log(article)
         let editedArticle = {
-            newsTitle: article.newsTitle.value,
-            url: article.newsUrl.value,
-            summary: article.newsSummary.value,
+            newsTitle: newsTitle.value,
+            url: newsUrl.value,
+            summary: newsSummary.value,
             timeStamp: new Date()
         }
         console.log(editedArticle)
