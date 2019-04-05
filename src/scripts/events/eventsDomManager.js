@@ -1,5 +1,6 @@
 import apiManager from "../apiManager.js";
 import HtmlBuilder from "../HtmlBuilder.js"
+import formEvent from "../events/eventsEventHandler.js"
 
 export default {
     //runs throuh a forEach loop and appends data to the DOM.
@@ -15,6 +16,19 @@ export default {
                 childEvent.appendChild(HtmlBuilder.elementBuilder("article", `eventDate--${event.id}`, `${event.eventDate}`))
                 //targets event by id and returns the location of the event and then appends to the DOM.
                 childEvent.appendChild(HtmlBuilder.elementBuilder("article", `eventLocation--${event.id}`, `${event.eventLocation}`))
+
+                //create a button to allow the user to edit an event
+                let editFormButton = HtmlBuilder.elementBuilder("button", `eventToEdit--${event.id}`, "Edit Event", "Edit")
+                //add an event listener to edit button to bring up the edit form
+                editFormButton.addEventListener("click", formEvent.handleEdit)
+                //create a button to allow the user to delete an event
+                let deleteFormButton = HtmlBuilder.elementBuilder("button", `eventToDelete--${event.id}`, "Delete Event", "Delete")
+                //add an event listener to delete button to delete an event
+                deleteFormButton.addEventListener("click", formEvent.handleDelete)
+                //append the edit button to each event
+                childEvent.appendChild(editFormButton);
+                //append the edit button to each event
+                childEvent.appendChild(deleteFormButton);
             }))},
             childEventContainer() {
                 //target events-section

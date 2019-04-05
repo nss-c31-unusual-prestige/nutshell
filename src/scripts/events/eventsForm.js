@@ -1,5 +1,4 @@
 import HtmlBuilder from "../HtmlBuilder.js"
-// import apiManager from "../apiManager.js"
 import formEvent from "../events/eventsEventHandler"
 
 //targets the events-section and assigns to a variable.
@@ -33,21 +32,21 @@ export default {
         //add an event listener to button to actually save data to the API.
         saveFormButton.addEventListener("click", formEvent.handleSave)
 
-        //create a button to allow the user to edit an event
-        let editFormButton = HtmlBuilder.elementBuilder("button", undefined, "Edit Event", "Edit")
+        // //create a button to allow the user to edit an event
+        // let editFormButton = HtmlBuilder.elementBuilder("button", undefined, "Edit Event", "Edit")
 
-        //add an event listener to button to bring up the edit form
-        editFormButton.addEventListener("click", formEvent.handleEdit)
+        // //add an event listener to button to bring up the edit form
+        // editFormButton.addEventListener("click", formEvent.handleEdit)
 
-        //add a button for deleting an event
-        let deleteFormButton = HtmlBuilder.elementBuilder("button", undefined, "Delete Event", "Delete")
+        // //add a button for deleting an event
+        // let deleteFormButton = HtmlBuilder.elementBuilder("button", undefined, "Delete Event", "Delete")
 
         //add an event listener to button to delete the selected event
-        deleteFormButton.addEventListener("click", formEvent.handleDelete)
+        // deleteFormButton.addEventListener("click", formEvent.handleDelete)
         //append the button, article, and fragments to DOM
         eventArticle.appendChild(saveFormButton)
-        eventArticle.appendChild(editFormButton)
-        eventArticle.appendChild(deleteFormButton)
+        // eventArticle.appendChild(editFormButton)
+        // eventArticle.appendChild(deleteFormButton)
         eventDocFragment.appendChild(eventArticle)
         eventContainer.appendChild(eventDocFragment)
     }
