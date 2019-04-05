@@ -14,14 +14,16 @@ export default {
         let eventArticle = HtmlBuilder.elementBuilder("article", "eventFormArticle")
         //create a label and input field for event name
         eventArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Name: ", "eventName"))
-        eventArticle.appendChild(HtmlBuilder.elementBuilder("input", "eventName", undefined, "enter an event"))
+        let nameInput = eventArticle.appendChild(HtmlBuilder.elementBuilder("input", "eventName"))
+        nameInput.placeholder = "Enter an event"
         //create a label and input field for event date
         eventArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Date: ", "eventDate"))
-        let dateInput = eventArticle.appendChild(HtmlBuilder.elementBuilder("input", "eventDate", undefined, undefined))
+        let dateInput = eventArticle.appendChild(HtmlBuilder.elementBuilder("input", "eventDate"))
         dateInput.setAttribute("type", "date")
         //create a label and input field for event location
         eventArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Location: ", "eventLocation"))
-        eventArticle.appendChild(HtmlBuilder.elementBuilder("input", "eventLocation", "eventLocation", "eventLocation"))
+        let locationInput = eventArticle.appendChild(HtmlBuilder.elementBuilder("input", "eventLocation"))
+        locationInput.placeholder = "Enter a location"
         //create a button for saving data to API.
         let saveFormButton = HtmlBuilder.elementBuilder("button", undefined, "Save Event", "Save")
 

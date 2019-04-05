@@ -1,9 +1,12 @@
 import apiManager from "../apiManager.js"
+import eventsDom from "../events/eventsDomManager.js"
+import HtmlBuilder from "../HtmlBuilder.js"
 
 
 export default {
     handleSave() {
         //target each field by Id
+        let eventsSection = document.getElementById("childEventsArticle")
         let eventName = document.getElementById("eventName")
         let eventDate = document.getElementById("eventDate")
         let eventLocation = document.getElementById("eventLocation")
@@ -17,11 +20,9 @@ export default {
         //push newly created event to API
         console.log(newEvent)
         apiManager.postAll("events", newEvent)
-        const 
-
+        .then(() => {
+            HtmlBuilder.clearElement(eventsSection)
+            eventsDom.listAllEvents()
+        })
     }
 }
-
-const nationalParksSection = document.querySelector("#national--parks");
-    clearElement(nationalParksSection)
-    nationalParksSection.appendChild(nationParksFragment)
