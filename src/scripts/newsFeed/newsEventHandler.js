@@ -1,6 +1,9 @@
 import apiManager from "../apiManager.js"
 import newsDom from "./newsDomManage"
 
+
+
+
 export default {
     // Save New Article being created
     handleSave() {
@@ -21,21 +24,25 @@ export default {
         .then(() => newsDom.listAllNews())
     },
     handleEdit(currentNews) {
-        apiManager.getOne("articles", `${currentNews.id}`)
-        .then(article => {
-        // let newsTitle = document.getElementById("newsTitle")
-        // let newsUrl = document.getElementById("newsUrl")
-        // let newsSummary = document.getElementById("newsSummary")
-console.log(article)
+        let userId = currentNews.target.id.split("-")[1]
+        let newsTitle = document.getElementById(`edit-news-title-${userId}`).value
+        let newsUrl = document.getElementById(`edit-news-url-${userId}`).value
+        let newsSummary = document.getElementById(`edit-news-summary-${userId}`).value
+        console.log(newsTitle)
         let editedArticle = {
-            newsTitle: newsTitle.value,
-            url: newsUrl.value,
-            summary: newsSummary.value,
+            newsTitle: newsTitle,
+            url: newsUrl,
+            summary: newsSummary,
             timeStamp: new Date()
         }
-        console.log(editedArticle)
-
+        apiManager.patchAll("articles", `${userId}`, editedArticle )
+        .then(() => {
+            newsDom.listAllNews()
         })
+            
+
+
+        
         
     }
 }

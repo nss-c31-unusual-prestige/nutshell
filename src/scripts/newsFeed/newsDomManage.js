@@ -18,9 +18,11 @@ export default {
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `${article.url}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTimeStamp--${article.id}`, `${article.timeStamp}`))
 
-            let editFormButton = HtmlBuilder.elementBuilder("button", undefined, "Edit Article", "Edit")
+            let editFormButton = HtmlBuilder.elementBuilder("button", `${article.id}`, "Edit Article", "Edit")
             newsDiv.appendChild(editFormButton)
-            editFormButton.addEventListener("click", newsForm.editNewsForm)
+            editFormButton.addEventListener("click", function(){
+                newsDiv.appendChild(newsForm.editNewsForm(article))
+            })
             
             childArticle.appendChild(newsDiv)
            
