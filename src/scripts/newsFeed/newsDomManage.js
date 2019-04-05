@@ -20,8 +20,7 @@ export default {
             childArticle.appendChild(HtmlBuilder.elementBuilder("article", `newsTitle--${article.id}`, `${article.newsTitle}`))
             childArticle.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `${article.summary}`))
             childArticle.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `${article.url}`))
-            
-           
+
         }))},
         childArticleContainer() {
             let articleContainer = document.getElementById("articles-section");
@@ -29,4 +28,7 @@ export default {
             articleContainer.appendChild(childArticle);
         }
     }
+<<<<<<< HEAD
 >>>>>>> ff08f2431c5466c191d877275353564e4af804a3
+=======
+>>>>>>> 85b6ce5db5dbdb996c09365d157935f4e27d2d64
