@@ -15,11 +15,13 @@ export default {
         newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newDescription", "decription:", ""))
 
         newDocFragment.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:", "newCompleteDate"))
-        newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
+        let dateInput = newDocFragment.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
+        dateInput.setAttribute("type", "date")
 
         let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Submit", "Save")
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
+
         taskSection.appendChild(newDocFragment)
         taskSection.appendChild(saveButtonForm)
     }
