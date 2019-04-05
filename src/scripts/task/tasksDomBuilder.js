@@ -8,10 +8,11 @@ export default {
         HtmlBuilder.clearElement(childSection)
         apiManager.getAll("tasks")
             .then(tasks => tasks.forEach(task => {
-                childSection.appendChild(HtmlBuilder.elementBuilder("section", `newName--${task.id}`, `${task.name}`))
-                childSection.appendChild(HtmlBuilder.elementBuilder("section", `newDescription--${task.id}`, `${task.description}`))
-                childSection.appendChild(HtmlBuilder.elementBuilder("section", `newCompleteDate--${task.id}`, `${task.completeDate}`))
-
+                let childDiv = HtmlBuilder.elementBuilder("div", "childDiv")
+                childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newName--${task.id}`, `${task.name}`))
+                childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newDescription--${task.id}`, `${task.description}`))
+                childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCompleteDate--${task.id}`, `${task.completeDate}`))
+                childSection.appendChild(childDiv)
                 let tasksSection = document.getElementById("tasks-section")
                 tasksSection.appendChild(childSection)
             }))

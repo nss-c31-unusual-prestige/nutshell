@@ -19,10 +19,13 @@ export default {
         let dateInput = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
         dateInput.setAttribute("type", "date")
 
-        let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Task Submit", "Save")
+        let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Add Task ", "Save")
+        let editButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Edit Task ", "Edit")
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
+        editButtonForm.addEventListener("click", formEvent.handleEdit)
         sectionTesk.appendChild(saveButtonForm)
+        sectionTesk.appendChild(editButtonForm)
         newDocFragment.appendChild(sectionTesk)
         taskSection.appendChild(newDocFragment)
     }
