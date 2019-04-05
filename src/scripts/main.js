@@ -1,8 +1,8 @@
-import apiManger from "../apiManager.js"
+import apiManger from "./apiManager.js"
 import taskform from "./task/taskForm.js"
 import tasksDomBuilder from "./task/tasksDomBuilder.js";
 import taskEventHandler from "./task/taskEventHandler.js";
 
-taskform.taskFormSection()
+taskForm.taskFormSection()
 tasksDomBuilder.listAllTask()
 taskEventHandler.handleSave()
