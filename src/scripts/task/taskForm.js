@@ -1,6 +1,4 @@
-<<<<<<< HEAD
 
-=======
 import HtmlBuilder from "../HtmlBuilder"
 import apiManger from "../apiManager"
 import formEvent from "./taskEventHandler.js"
@@ -30,4 +28,3 @@ export default {
         taskSection.appendChild(newDocFragment)
     }
 }
->>>>>>> 85b6ce5db5dbdb996c09365d157935f4e27d2d64
