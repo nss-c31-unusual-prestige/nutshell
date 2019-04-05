@@ -21,7 +21,9 @@ export default {
         console.log(newEvent)
         apiManager.postAll("events", newEvent)
         .then(() => {
+            //clears eventsSection
             HtmlBuilder.clearElement(eventsSection)
+            //after eventsSection is cleared refresh with new list
             eventsDom.listAllEvents()
         })
     }

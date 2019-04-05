@@ -17,8 +17,11 @@ export default {
                 childEvent.appendChild(HtmlBuilder.elementBuilder("article", `eventLocation--${event.id}`, `${event.eventLocation}`))
             }))},
             childEventContainer() {
+                //target events-section
                 let eventContainer = document.getElementById("events-section");
+                //create and target childEventsArticle and set it to a variable
                 let childEvent = HtmlBuilder.elementBuilder("article", "childEventsArticle");
+                //append childEvent to eventContainer
                 eventContainer.appendChild(childEvent);
             }
     }
