@@ -1,0 +1,6 @@
+#newsFormArticle{
+    display: flex;
+    flex-direction: column;
+    max-width: 100px;
+    max-height: 160px;
+}
