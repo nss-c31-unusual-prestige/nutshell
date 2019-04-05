@@ -20,7 +20,22 @@ export default {
         apiManager.postAll("articles", newArticle)
         .then(() => newsDom.listAllNews())
     },
-    handleEdit() {
+    handleEdit(currentNews) {
+        apiManager.getOne("articles", `${currentNews.id}`)
+        .then(article => {
+        // let newsTitle = document.getElementById("newsTitle")
+        // let newsUrl = document.getElementById("newsUrl")
+        // let newsSummary = document.getElementById("newsSummary")
+
+        let editedArticle = {
+            newsTitle: article.newsTitle.value,
+            url: article.newsUrl.value,
+            summary: article.newsSummary.value,
+            timeStamp: new Date()
+        }
+        console.log(editedArticle)
+
+        })
         
     }
 }

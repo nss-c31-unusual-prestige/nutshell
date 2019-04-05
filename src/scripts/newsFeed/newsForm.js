@@ -43,7 +43,7 @@ export default {
             newsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-news-summary-${currentNewsDivid}`, currentNewsForm.summary))
             
             let editSaveButton = HtmlBuilder.elementBuilder("button", undefined, "Save Article", "Save")
-             editSaveButton.addEventListener("click", formEvent.handleSave)
+             editSaveButton.addEventListener("click", formEvent.handleEdit(currentNewsForm))
              newsEditDiv.appendChild(editSaveButton)
              newsEditFrag.appendChild(newsEditDiv)
              currentNewsDiv.appendChild(newsEditFrag)
