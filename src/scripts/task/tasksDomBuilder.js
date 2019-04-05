@@ -4,17 +4,18 @@ import HtmlBuilder from "../HtmlBuilder.js";
 
 export default {
     listAllTask() {
-        let taskSection = document.querySelector("#childTasksSection")
+        let childSection = document.querySelector("#childTasksSection")
+        HtmlBuilder.clearElement(childSection)
         apiManager.getAll("tasks")
         .then(tasks => tasks.forEach(tasks =>{
-            taskSection.appendChild(HtmlBuilder.elementBuilder("tasks", `newName--${tasks.id}`, `${tasks.newName}`))
-            taskSection.appendChild(HtmlBuilder.elementBuilder("tasks", `newDescription--${tasks.id}`, `${tasks.newDescription}`))
-            taskSection.appendChild(HtmlBuilder.elementBuilder("tasks", `newCompleteDate--${tasks.id}`, `${tasks.newCompleteDate}`))
+            childSection.appendChild(HtmlBuilder.elementBuilder("tasks", `newName--${tasks.id}`, `${tasks.newName}`))
+            childSection.appendChild(HtmlBuilder.elementBuilder("tasks", `newDescription--${tasks.id}`, `${tasks.newDescription}`))
+            childSection.appendChild(HtmlBuilder.elementBuilder("tasks", `newCompleteDate--${tasks.id}`, `${tasks.newCompleteDate}`))
         }))},
         childDisplay() {
-            let childTasksSection =document.getElementById("tasks-section")
-            taskSection = HtmlBuilder.elementBuilder("tasks", "childTasksSection")
-            childTasksSection.appendChild(taskSection)
+            let taskSection =document.getElementById("tasks-section")
+            childSection = HtmlBuilder.elementBuilder("tasks", "childTasksSection")
+            taskSection.appendChild(taskSection)
 
         }
     }
