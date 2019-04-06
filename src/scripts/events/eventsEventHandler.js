@@ -29,10 +29,13 @@ export default {
         })
     },
     handleEdit : () => {
-        console.log("Edit button clicked!!")
-
+        console.log(event)
+        console.log("Edit button clicked!!", event.target.id.split("--")[1])
     },
     handleDelete: () => {
-        console.log("Delete button clicked!!")
+        console.log(event)
+        console.log("Edit button clicked!!", event.target.id.split("--")[1])
+        let eventId = event.target.id.split("--")[1];
+        apiManager.delFetch("events", eventId).then(() => apiManager.getAll("events", eventId));
     }
 }

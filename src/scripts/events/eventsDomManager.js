@@ -21,10 +21,12 @@ export default {
                 let editFormButton = HtmlBuilder.elementBuilder("button", `eventToEdit--${event.id}`, "Edit Event", "Edit")
                 //add an event listener to edit button to bring up the edit form
                 editFormButton.addEventListener("click", formEvent.handleEdit)
+
                 //create a button to allow the user to delete an event
                 let deleteFormButton = HtmlBuilder.elementBuilder("button", `eventToDelete--${event.id}`, "Delete Event", "Delete")
                 //add an event listener to delete button to delete an event
                 deleteFormButton.addEventListener("click", formEvent.handleDelete)
+
                 //append the edit button to each event
                 childEvent.appendChild(editFormButton);
                 //append the edit button to each event

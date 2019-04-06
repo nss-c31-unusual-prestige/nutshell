@@ -32,14 +32,7 @@ export default {
         //add an event listener to button to actually save data to the API.
         saveFormButton.addEventListener("click", formEvent.handleSave)
 
-        // //create a button to allow the user to edit an event
-        // let editFormButton = HtmlBuilder.elementBuilder("button", undefined, "Edit Event", "Edit")
 
-        // //add an event listener to button to bring up the edit form
-        // editFormButton.addEventListener("click", formEvent.handleEdit)
-
-        // //add a button for deleting an event
-        // let deleteFormButton = HtmlBuilder.elementBuilder("button", undefined, "Delete Event", "Delete")
 
         //add an event listener to button to delete the selected event
         // deleteFormButton.addEventListener("click", formEvent.handleDelete)
