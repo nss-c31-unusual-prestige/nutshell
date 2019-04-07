@@ -20,13 +20,29 @@ export default {
         dateInput.setAttribute("type", "date")
 
         let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Add Task ", "Save")
-        let editButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Edit Task ", "Edit")
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
-        editButtonForm.addEventListener("click", formEvent.handleEdit)
+
         sectionTesk.appendChild(saveButtonForm)
-        sectionTesk.appendChild(editButtonForm)
         newDocFragment.appendChild(sectionTesk)
         taskSection.appendChild(newDocFragment)
+    },
+
+    const editTaskForm = (taskObject) =>{
+        let taskEditArticle = HtmlBuilder.elementBuilder("article", "taskEditArticle")
+
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:"))
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-name-${taskObject.id}`, undefined, taskObject.name))
+
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Decription:"))
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-decription-${taskObject.id}`, undefined, taskObject.decription))
+
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:"))
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-completeDate-${taskObject.id}`, undefined, taskObject.completeDate))
+
+        let editButtonForm = HtmlBuilder.elementBuilder("button", `edit-${taskObject.id}`, "Edit Task ", "Save")
+        editButtonForm.addEventListener("click", formEvent.handleEdit)
+        taskEditArticle.appendChild(editButtonForm)
+        return taskEditArticle
     }
 }
