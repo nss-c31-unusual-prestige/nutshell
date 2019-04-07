@@ -4,8 +4,10 @@ import HtmlBuilder from "../HtmlBuilder.js";
 
 export default {
     listAllTask() {
-        let childSection = document.getElementById("childTasksSection")
+        const tasksSection = document.querySelector("#tasks-section")
+        let childSection = document.createElement("article")
         HtmlBuilder.clearElement(childSection)
+        tasksSection.appendChild(childSection)
         apiManager.getAll("tasks")
         .then(tasks => tasks.forEach(task => {
             let childDiv = HtmlBuilder.elementBuilder("div", `childDiv-${task.id}`)

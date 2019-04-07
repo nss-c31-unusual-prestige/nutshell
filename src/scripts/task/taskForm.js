@@ -13,11 +13,13 @@ export default {
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", ""))
 
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Decription:", "newDescription"))
-        sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newDescription", "decription:", ""))
+        sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newDescription", "description:", ""))
 
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:", "newCompleteDate"))
         let dateInput = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
         dateInput.setAttribute("type", "date")
+
+        //sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "checkBox", "Completation"))
 
         let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Add Task ", "Save")
 
