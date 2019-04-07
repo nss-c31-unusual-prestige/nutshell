@@ -4,7 +4,7 @@ import HtmlBuilder from "../HtmlBuilder.js";
 
 export default {
     listAllTask() {
-        const tasksSection = document.querySelector("#tasks-section")
+         const tasksSection = document.querySelector("#tasks-section")
         let childSection = document.createElement("article")
         HtmlBuilder.clearElement(childSection)
         tasksSection.appendChild(childSection)
@@ -25,7 +25,7 @@ export default {
             }))
     },
 
-    childSectionForm() {
+    childTaskSection() {
         let tasksSection = document.getElementById("tasks-section")
         let childSection = HtmlBuilder.elementBuilder("task", "childTasksSection")
         tasksSection.appendChild(childSection)

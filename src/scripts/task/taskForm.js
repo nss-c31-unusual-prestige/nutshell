@@ -7,7 +7,7 @@ let taskSection = document.getElementById("tasks-section")
 export default {
     taskFormSection() {
         let newDocFragment = document.createDocumentFragment()
-        let sectionTesk = HtmlBuilder.elementBuilder("section", "taskFormSection")
+        let sectionTesk = HtmlBuilder.elementBuilder("task", "taskFormSection")
 
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:", "name"))
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", ""))
