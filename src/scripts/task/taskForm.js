@@ -19,8 +19,6 @@ export default {
         let dateInput = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
         dateInput.setAttribute("type", "date")
 
-        //sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "checkBox", "Completation"))
-
         let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Add Task ", "Save")
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
