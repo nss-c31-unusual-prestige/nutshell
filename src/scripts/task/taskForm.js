@@ -28,7 +28,7 @@ export default {
         taskSection.appendChild(newDocFragment)
     },
 
-    const editTaskForm = (taskObject) =>{
+     editTaskForm(taskObject){
         let taskEditArticle = HtmlBuilder.elementBuilder("article", "taskEditArticle")
 
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:"))
