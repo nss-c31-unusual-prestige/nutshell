@@ -19,3 +19,8 @@
     max-height: 160px;
     
 }
+
+#homePageArticle{
+    display: flex;
+    flex-direction: column;
+}

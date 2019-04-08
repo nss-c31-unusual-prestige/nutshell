@@ -24,10 +24,10 @@ export default {
         .then(() => newsDom.listAllNews())
     },
     handleEdit(currentNews) {
-        let userId = currentNews.target.id.split("-")[1]
-        let newsTitle = document.getElementById(`edit-news-title-${userId}`).value
-        let newsUrl = document.getElementById(`edit-news-url-${userId}`).value
-        let newsSummary = document.getElementById(`edit-news-summary-${userId}`).value
+        let newsId = currentNews.target.id.split("-")[1]
+        let newsTitle = document.getElementById(`edit-news-title-${newsId}`).value
+        let newsUrl = document.getElementById(`edit-news-url-${newsId}`).value
+        let newsSummary = document.getElementById(`edit-news-summary-${newsId}`).value
         console.log(newsTitle)
         let editedArticle = {
             newsTitle: newsTitle,
@@ -35,7 +35,7 @@ export default {
             summary: newsSummary,
             timeStamp: new Date()
         }
-        apiManager.patchAll("articles", `${userId}`, editedArticle )
+        apiManager.patchAll("articles", `${newsId}`, editedArticle )
         .then(() => {
             newsDom.listAllNews()
         })
