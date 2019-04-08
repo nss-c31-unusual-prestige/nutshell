@@ -10,3 +10,6 @@ import homepage from "./Homepage/homePage.js"
 
 homepage.homePage()
 
+import messageHandler from "./chat/messages.js"
+
+messageHandler.createChat();
