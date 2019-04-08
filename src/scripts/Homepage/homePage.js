@@ -10,7 +10,12 @@ export default {
         let homePageArticle = htmlBuilder.elementBuilder("article", "homePageArticle")
         homePageArticle.appendChild(htmlBuilder.elementBuilder("h1", "homeTitle", "Unusual Homepage"))
         if (currentUser) {
-            homePageArticle.appendChild(htmlBuilder.elementBuilder("h2", `Welcome ${currentUser.name}`));
+            homePageArticle.appendChild(htmlBuilder.elementBuilder("h2", "welcome" `Welcome ${currentUser.name}`));
+            const logOutButton = htmlBuilder.elementBuilder("button", "logout", "Log Out");
+            logOutButton.addEventListener("click", event => {
+                event.preventDefault();
+                login.logOut();
+            })
         } else {
             homePageArticle.appendChild(htmlBuilder.elementBuilder("label", undefined, "Username"))
             homePageArticle.appendChild(htmlBuilder.elementBuilder("input", "Username", "User"))
