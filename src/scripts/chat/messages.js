@@ -34,7 +34,7 @@ export default {
         //create the divider that contains the user name and message.
         const messageDiv = HtmlBuilder.elementBuilder("DIV", `message--${message.id}`, undefined, undefined);
         //create username HTML.
-        const nameTag = HtmlBuilder.elementBuilder("SPAN", `userbox--${userObject.id}`, `${userObject.user}: `, undefined);
+        const nameTag = HtmlBuilder.elementBuilder("SPAN", `userbox--${userObject.id}`, `${userObject.name}: `, undefined);
         //create message HTML.
         const element = HtmlBuilder.elementBuilder("SPAN", `line--${message.id}`, message.message, undefined);
         //append name and element to the container.
