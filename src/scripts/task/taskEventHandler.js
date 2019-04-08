@@ -19,10 +19,10 @@ export default {
     },
 
     handleEdit(currentTask) {
-        let userId = currentTask.terget.id.split("-")[1]
+        let userId = currentTask.target.id.split("-")[1]
         let name = document.getElementById(`edit-task-name-${userId.id}`).value
         let description = document.getElementById(`edit-task-decription-${userId.id}`).value
-        let completeDate = document.getElementById(`edit-task-completeDate-${userId.id}`)
+        let completeDate = document.getElementById(`edit-task-completeDate-${userId.id}`).value
 
         let editTask = {
             name: name,

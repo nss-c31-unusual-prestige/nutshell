@@ -7,7 +7,7 @@ let taskSection = document.getElementById("tasks-section")
 export default {
     taskFormSection() {
         let newDocFragment = document.createDocumentFragment()
-        let sectionTesk = HtmlBuilder.elementBuilder("task", "taskFormSection")
+        let sectionTesk = HtmlBuilder.elementBuilder("section", "taskFormSection")
 
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:", "name"))
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", ""))
@@ -19,12 +19,15 @@ export default {
         let dateInput = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
         dateInput.setAttribute("type", "date")
 
+        //sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "checkBox", "Completation"))
+
         let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Add Task ", "Save")
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
-
+        const articleSection = HtmlBuilder.elementBuilder("section", "taskSection")
         sectionTesk.appendChild(saveButtonForm)
         newDocFragment.appendChild(sectionTesk)
+        newDocFragment.appendChild(articleSection)
         taskSection.appendChild(newDocFragment)
     },
 

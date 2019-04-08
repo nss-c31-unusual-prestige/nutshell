@@ -1,12 +1,12 @@
 import apiManager from "../apiManager.js";
 import HtmlBuilder from "../HtmlBuilder.js";
-
+import taskForm from "./taskForm.js"
 
 export default {
     listAllTask() {
-         const tasksSection = document.querySelector("#tasks-section")
+        const tasksSection = document.querySelector("#taskSection")
         let childSection = document.createElement("article")
-        HtmlBuilder.clearElement(childSection)
+        HtmlBuilder.clearElement(tasksSection)
         tasksSection.appendChild(childSection)
         apiManager.getAll("tasks")
         .then(tasks => tasks.forEach(task => {
@@ -18,7 +18,7 @@ export default {
                 let editFormButton = HtmlBuilder.elementBuilder("Button",`${task.id}`, "Edit Task", "Edit")
                 childDiv.appendChild(editFormButton)
                 editFormButton.addEventListener("click", function () {
-                    childDiv.appendChild(taskFormSection.editTaskForm(task))
+                    childDiv.appendChild(taskForm.editTaskForm(task))
                 })
                 childSection.appendChild(childDiv)
 
