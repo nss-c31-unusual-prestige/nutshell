@@ -15,6 +15,7 @@ export default {
         apiManager.getAll("articles")
         .then(articles => articles.forEach(article => {
             let newsDiv = HtmlBuilder.elementBuilder("div", `newsDiv-${article.id}`)
+            newsDiv.className = ("newsDiv")
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTitle--${article.id}`, `${article.newsTitle}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `${article.summary}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `${article.url}`))
