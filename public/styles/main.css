@@ -1,15 +1,27 @@
+
+
 #newsFormArticle{
     display: flex;
     flex-direction: column;
     max-width: 100px;
     max-height: 160px;
+   
 }
 
-#newsDiv{
+.newsDiv{
+    border-style: solid;
+    border-color: black;
+    margin-bottom: 50px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    max-width: 100px;
+    max-width: 150px;
     max-height: 160px;
-    border: 1px, black, solid;
+    
+}
+
+.newsEditDiv{
+    margin-left: 25px;
+    border-style: solid;
+    border-color: blue;
 }
