@@ -20,6 +20,12 @@
     
 }
 
+
+#homePageArticle{
+    display: flex;
+    flex-direction: column;
+}
+
 .newsEditDiv{
     margin-left: 25px;
     border-style: solid;
