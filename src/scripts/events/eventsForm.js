@@ -1,5 +1,4 @@
 import HtmlBuilder from "../HtmlBuilder.js"
-// import apiManager from "../apiManager.js"
 import formEvent from "../events/eventsEventHandler"
 
 //targets the events-section and assigns to a variable.
@@ -30,11 +29,17 @@ export default {
         //create a button for saving data to API.
         let saveFormButton = HtmlBuilder.elementBuilder("button", undefined, "Save Event", "Save")
 
-        //add an event handler to button to actually save data to the API.
+        //add an event listener to button to actually save data to the API.
         saveFormButton.addEventListener("click", formEvent.handleSave)
 
+
+
+        //add an event listener to button to delete the selected event
+        // deleteFormButton.addEventListener("click", formEvent.handleDelete)
         //append the button, article, and fragments to DOM
         eventArticle.appendChild(saveFormButton)
+        // eventArticle.appendChild(editFormButton)
+        // eventArticle.appendChild(deleteFormButton)
         eventDocFragment.appendChild(eventArticle)
         eventContainer.appendChild(eventDocFragment)
     }

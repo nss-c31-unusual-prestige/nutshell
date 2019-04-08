@@ -1,6 +1,9 @@
+
+
 #newsFormArticle{
     display: flex;
     flex-direction: column;
+
 }
 #taskFormSection{
     display: flex;
@@ -12,4 +15,32 @@ button {
     color: white;
     width: 20%;
     height: 20px
+}
+    max-width: 100px;
+    max-height: 160px;
+   
+}
+
+.newsDiv{
+    border-style: solid;
+    border-color: black;
+    margin-bottom: 50px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 150px;
+    max-height: 160px;
+    
+}
+
+
+#homePageArticle{
+    display: flex;
+    flex-direction: column;
+}
+
+.newsEditDiv{
+    margin-left: 25px;
+    border-style: solid;
+    border-color: blue;
 }
