@@ -28,14 +28,14 @@ export default {
             eventsDom.listAllEvents()
         })
     },
-    handleEdit : () => {
+    handleEdit: () => {
         console.log(event)
         console.log("Edit button clicked!!", event.target.id.split("--")[1])
     },
     handleDelete: () => {
         console.log(event)
-        console.log("Edit button clicked!!", event.target.id.split("--")[1])
+        console.log("Delete button clicked!!", event.target.id.split("--")[1])
         let eventId = event.target.id.split("--")[1];
-        apiManager.delFetch("events", eventId).then(() => apiManager.getAll("events", eventId));
+        apiManager.delFetch("events", eventId).then(() =>  eventsDom.listAllEvents());
     }
 }
