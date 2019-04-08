@@ -1,6 +1,7 @@
 import apiManager from "../apiManager.js";
 import HtmlBuilder from "../HtmlBuilder.js";
 import taskForm from "./taskForm.js"
+import event from "./taskEventHandler.js"
 
 export default {
     listAllTask() {
@@ -15,7 +16,9 @@ export default {
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newDescription--${task.id}`, `${task.description}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCompleteDate--${task.id}`, `${task.completeDate}`))
 
-                let deleteFormButtom = HtmlBuilder.elementBuilder("buuton", `delete--${task.id}`, )
+                let deleteFormButtom = HtmlBuilder.elementBuilder("button", `delete--${task.id}`, "Delete Task", "Delete")
+                deleteFormButtom.addEventListener("click", taskForm.handleDelete)
+                childDiv.appendChild(deleteFormButtom)
 
                 let editFormButton = HtmlBuilder.elementBuilder("button",`${task.id}`, "Task Edit", "Edit")
                 childDiv.appendChild(editFormButton)
