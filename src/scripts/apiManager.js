@@ -29,8 +29,8 @@ export default {
     },
 
     patchAll: (key, itemId, objectId) => {
-        return fetch(apiURL / key / itemId, {
-            Method: "PATCH",
+        return fetch(`${apiURL}/${key}/${itemId}`, {
+            method: "PATCH",
             headers: {
                 "Content-type": "application/json"
             },
