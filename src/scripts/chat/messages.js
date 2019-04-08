@@ -11,16 +11,22 @@ const messageBox = HtmlBuilder.elementBuilder("section", "message--window", unde
 const messageFragment = document.createDocumentFragment();
 
 export default {
-    printMessage: function () {
-        console.log("printing message");
+    printMessages: function () {
         messageBox.appendChild(messageFragment);
+        //scroll to bottom.
+        messageBox.scrollTop = messageBox.scrollHeight;
+
     },
     createEditButton: function (messageId) {
         const button = HtmlBuilder.elementBuilder("button", `edit--${messageId}`, "Edit", undefined);
         button.addEventListener("click", (event) => {
             event.preventDefault()
-            //messageEventHanlder.postNewMessage(messageInput);
-            console.log("editing");
+            //build form
+            const messageContainer = event.target.parentNode
+            const editForm = messageField.createUpdateForm(messageId, event.target);
+            //place edit form in place of the original message.
+            messageContainer.appendChild(editForm);
+            //save button will addOneMessage to parentNode.
         })
         return button;
     },
@@ -31,8 +37,6 @@ export default {
         const nameTag = HtmlBuilder.elementBuilder("SPAN", `userbox--${userObject.id}`, `${userObject.user}: `, undefined);
         //create message HTML.
         const element = HtmlBuilder.elementBuilder("SPAN", `line--${message.id}`, message.message, undefined);
-        console.log(element);
-        console.log(message.userId);
         //append name and element to the container.
         messageDiv.appendChild(nameTag);
         messageDiv.appendChild(element);
@@ -42,7 +46,6 @@ export default {
         }
         //append message container to the message box that contains all messages.
         messageFragment.appendChild(messageDiv);
-        console.log(messageDiv);
     },
     createMessages: function () {
         //clears the message box before appending the new message list.
@@ -57,12 +60,12 @@ export default {
         //calls the API manager to pull the messages from the database.
         apiManager.getAll("messages").then(messages => {
             //then for each message, pass the values contained in the database to build the message.
-            console.log("getting messages");
             messages.forEach(message => {
                 apiManager.getOne("users", message.userId).then(user => {
                     this.assembleMessage(user, message, 4);
-                    this.printMessage()
-                    messageBox.scrollTop = messageBox.scrollHeight;
+                    return
+                }).then(next => {
+                    this.printMessages();
                 })
             })
         })
@@ -75,8 +78,8 @@ export default {
                 if (message.id === messages.length) {
                     apiManager.getOne("users", message.userId).then(user => {
                         this.assembleMessage(user, message, 4);
-                        this.printMessage()
-                        messageBox.scrollTop = messageBox.scrollHeight;
+                    }).then(next => {
+                        this.printMessages();
                     })
                 }
             })

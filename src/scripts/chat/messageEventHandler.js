@@ -17,5 +17,16 @@ export default {
         apiManager.postAll("messages", message).then(response => {
             messageManager.addOneMessage()
         })
+    },
+    updateMessage: function (id ,input) {
+        const message = {
+            "message": input,
+            //will be updated to have the user ID for that session/user passed to it.
+            "userId": 4,
+            "id": id
+        }
+        apiManager.patchAll("messages", id, message).then(()=>{
+            messageManager.createMessages();
+        });
     }
 }
