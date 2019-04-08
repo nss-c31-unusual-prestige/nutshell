@@ -43,7 +43,7 @@ export default {
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:"))
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-completeDate-${taskObject.id}`, undefined, taskObject.completeDate))
 
-        let editButtonForm = HtmlBuilder.elementBuilder("button", `edit-${taskObject.id}`, "Edit Task ", "Save")
+        let editButtonForm = HtmlBuilder.elementBuilder("button", `edit-${taskObject.id}`, "Save", "edit-save")
         editButtonForm.addEventListener("click", formEvent.handleEdit)
         taskEditArticle.appendChild(editButtonForm)
         return taskEditArticle

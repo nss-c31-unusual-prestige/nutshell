@@ -15,7 +15,9 @@ export default {
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newDescription--${task.id}`, `${task.description}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCompleteDate--${task.id}`, `${task.completeDate}`))
 
-                let editFormButton = HtmlBuilder.elementBuilder("Button",`${task.id}`, "Edit Task", "Edit")
+                let deleteFormButtom = HtmlBuilder.elementBuilder("buuton", `delete--${task.id}`, )
+
+                let editFormButton = HtmlBuilder.elementBuilder("button",`${task.id}`, "Task Edit", "Edit")
                 childDiv.appendChild(editFormButton)
                 editFormButton.addEventListener("click", function () {
                     childDiv.appendChild(taskForm.editTaskForm(task))
