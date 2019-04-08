@@ -7,3 +7,6 @@ newsForm.newsForm()
 newsFeedDOM.childArticleContainer()
 newsFeedDOM.listAllNews()
 
+import messageHandler from "./chat/messages.js"
+
+messageHandler.createChat();
