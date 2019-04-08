@@ -16,10 +16,10 @@ export default {
         .then(articles => articles.forEach(article => {
             let newsDiv = HtmlBuilder.elementBuilder("div", `newsDiv-${article.id}`)
             newsDiv.className = ("newsDiv")
-            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTitle--${article.id}`, `${article.newsTitle}`))
-            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `${article.summary}`))
-            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `${article.url}`))
-            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTimeStamp--${article.id}`, `${article.timeStamp}`))
+            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTitle--${article.id}`, `Title: ${article.newsTitle}`))
+            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `Summary: ${article.summary}`))
+            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `URL: ${article.url}`))
+            newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTimeStamp--${article.id}`, `Uploaded:${article.timeStamp}`))
             
             
             let deleteFormButton = HtmlBuilder.elementBuilder("button", `delete--${article.id}`, "Delete Article", "Delete")

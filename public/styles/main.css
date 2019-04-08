@@ -11,11 +11,17 @@
 .newsDiv{
     border-style: solid;
     border-color: black;
-    margin: 50px, 0px, 50px, 0px;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     max-width: 150px;
     max-height: 160px;
     
+}
+
+.newsEditDiv{
+    margin-left: 25px;
+    border-style: solid;
+    border-color: blue;
 }
