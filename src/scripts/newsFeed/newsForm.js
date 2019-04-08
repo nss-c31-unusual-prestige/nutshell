@@ -33,6 +33,7 @@ export default {
             // let currentNewsDivid = event.target.parentNode.id.split("-")[1]
             // let currentNewsDiv = document.getElementById(`newsDiv-${newsObject.id}`)
             let newsEditDiv = HtmlBuilder.elementBuilder("div", "newsEditDiv")
+            newsEditDiv.className = ("newsEditDiv")
             // let newsEditFrag = document.createDocumentFragment()
 
 //         apiManager.getOne("articles", event.target)
