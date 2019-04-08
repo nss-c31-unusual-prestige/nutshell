@@ -12,12 +12,15 @@ export default {
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:", "name"))
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", ""))
 
-        sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Decription:", "newDescription"))
+        sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Description:", "newDescription"))
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newDescription", "description:", ""))
 
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:", "newCompleteDate"))
-        let dateInput = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:", ""))
+        let dateInput = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCompleteDate", "completeDate:"))
         dateInput.setAttribute("type", "date")
+        sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete", "newCompleteDate"))
+        let checkbox = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCheckbox", "checkbox"))
+        checkbox.setAttribute("type", "checkbox")
 
         //sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "checkBox", "Completation"))
 
@@ -37,11 +40,15 @@ export default {
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:"))
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-name-${taskObject.id}`, undefined, taskObject.name))
 
-        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Decription:"))
-        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-decription-${taskObject.id}`, undefined, taskObject.decription))
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Description:"))
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-decription-${taskObject.id}`, undefined, taskObject.description))
 
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:"))
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-completeDate-${taskObject.id}`, undefined, taskObject.completeDate))
+
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Done"))
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-checkbox-${taskObject.id}`, undefined, taskObject.checkbox))
+        taskEditArticle.setAttribute("type", "checkbox")
 
         let editButtonForm = HtmlBuilder.elementBuilder("button", `edit-${taskObject.id}`, "Save", "edit-save")
         editButtonForm.addEventListener("click", formEvent.handleEdit)

@@ -15,12 +15,13 @@ export default {
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newName--${task.id}`, `${task.name}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newDescription--${task.id}`, `${task.description}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCompleteDate--${task.id}`, `${task.completeDate}`))
+                childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCheckbox--${task.id}`, `${task.checkbox}`))
 
                 let deleteFormButtom = HtmlBuilder.elementBuilder("button", `delete--${task.id}`, "Delete Task", "Delete")
-                deleteFormButtom.addEventListener("click", taskForm.handleDelete)
+                deleteFormButtom.addEventListener("click", event.handleDelete)
                 childDiv.appendChild(deleteFormButtom)
 
-                let editFormButton = HtmlBuilder.elementBuilder("button",`${task.id}`, "Task Edit", "Edit")
+                let editFormButton = HtmlBuilder.elementBuilder("button",`save-${task.id}`, "Task Edit", "Edit")
                 childDiv.appendChild(editFormButton)
                 editFormButton.addEventListener("click", function () {
                     childDiv.appendChild(taskForm.editTaskForm(task))

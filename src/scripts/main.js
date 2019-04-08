@@ -4,4 +4,4 @@ import taskEventHandler from "./task/taskEventHandler.js";
 
 taskForm.taskFormSection()
 tasksDomBuilder.listAllTask()
-taskEventHandler.listAllTask()
+// taskEventHandler.listAllTask()

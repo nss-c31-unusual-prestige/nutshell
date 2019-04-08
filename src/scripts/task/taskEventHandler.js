@@ -7,11 +7,13 @@ export default {
         let name = document.getElementById("newName")
         let description = document.getElementById("newDescription")
         let completeDate = document.getElementById("newCompleteDate")
+        let checkbox = document.getElementById("newCheckbox")
 
         let newSection = {
             name: name.value,
             description: description.value,
-            completeDate: completeDate.value
+            completeDate: completeDate.value,
+            checkbox: checkbox.value
         }
         console.log(newSection)
         apiManger.postAll("tasks", newSection)
@@ -19,23 +21,25 @@ export default {
     },
 
     handleEdit(currentTask) {
-        let userId = currentTask.target.id.split("--")[1]
-        let name = document.getElementById(`edit-task-name-${userId.id}`).value
-        let description = document.getElementById(`edit-task-description-${userId.id}`).value
-        let completeDate = document.getElementById(`edit-task-completeDate-${userId.id}`).value
+        let taskId = currentTask.target.id.split("-")[1]
+        let name = document.getElementById(`edit-task-name-${taskId}`)
+        let description = document.getElementById(`edit-task-description-${taskId}`)
+        let completeDate = document.getElementById(`edit-task-completeDate-${taskId}`)
+        let checkbox =document.getElementById(`edit-task-checkbox-${taskId}`).value
 
         let editTask = {
             name: name,
             description: description,
-            completeDate: completeDate
+            completeDate: completeDate,
+            checkbox: checkbox
         }
         console.log(editTask)
-        apiManger.postAll("tasks", `${userId}`, editTask)
+        apiManger.postAll("tasks", `${taskId}`, editTask)
             .then(() => taskDom.listAllTask())
     },
     handleDelete() {
         console.log("delete button clicked")
-        event.target.id.split("--")[1]
+        // event.target.id.split("--")[1]
         let taskId = event.target.id.split("--")[1]
 
         apiManger.delFetch("tasks", taskId)
