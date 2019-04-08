@@ -34,7 +34,13 @@ export default {
     createMessages: function () {
         //clears the message box before appending the new message list.
         HtmlBuilder.clearElement(messageBox);
-        //calls the API manager to pull the messages from the database,
+        //create scollbar.
+        messageBox.style.overflowY = "auto";
+        //floating chatbox.
+        messageSection.style.position = "absolute";
+        messageBox.style.maxHeight = "600px"
+        messageBox.style.maxWidth = "200px"
+        //calls the API manager to pull the messages from the database.
         apiManager.getAll("messages").then(messages => {
             //then for each message, pass the values contained in the database to build the message.
             console.log("getting messages");
