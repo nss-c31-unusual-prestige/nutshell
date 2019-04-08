@@ -39,10 +39,14 @@ export default {
         .then(() => {
             newsDom.listAllNews()
         })
-            
+    },
+        handleDelete() {
+            console.log("delete button clicked")
+    event.target.id.split("--")[1]
+  
+  let articleId = event.target.id.split("--")[1];
 
-
-        
-        
-    }
+  apiManager.delFetch("articles", articleId).then(() => newsDom.listAllNews());
+}
+ 
 }
