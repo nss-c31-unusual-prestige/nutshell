@@ -1,6 +1,8 @@
 import apiManager from "../apiManager.js"
 import HtmlBuilder from "../HtmlBuilder.js"
 import newsForm from "./newsForm"
+import newsEvent from "./newsEventHandler.js"
+
 // container for appending articles to DOM.
 
 
@@ -22,9 +24,13 @@ export default {
             newsDiv.appendChild(editFormButton)
             editFormButton.addEventListener("click", function(){
                 newsDiv.appendChild(newsForm.editNewsForm(article))
+
+            let deleteFormButton = HtmlBuilder.elementBuilder("button", `delete--${article.id}`, "Delete Article", "Delete")
+            newsDiv.appendChild(deleteFormButton)
+            deleteFormButton.addEventListener("click", newsEvent.handleDelete)
             })
             
-            childArticle.appendChild(newsDiv)
+            childArticle.appendChild(newsDiv, )
            
         }))},
         childArticleContainer() {
