@@ -44,9 +44,9 @@ export default {
             console.log("delete button clicked")
     event.target.id.split("--")[1]
   
-  let articleId = event.target.parentNode.id.split("--")[1];
+  let articleId = event.target.id.split("--")[1];
 
-  apiManager.delFetch(articleId).then(() => newsDom.listAllNews());
+  apiManager.delFetch("articles", articleId).then(() => newsDom.listAllNews());
 }
  
 }

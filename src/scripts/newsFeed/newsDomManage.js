@@ -19,18 +19,20 @@ export default {
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `${article.summary}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `${article.url}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTimeStamp--${article.id}`, `${article.timeStamp}`))
+            
+            
+            let deleteFormButton = HtmlBuilder.elementBuilder("button", `delete--${article.id}`, "Delete Article", "Delete")
+            deleteFormButton.addEventListener("click", newsEvent.handleDelete)
+            newsDiv.appendChild(deleteFormButton)
 
             let editFormButton = HtmlBuilder.elementBuilder("button", `${article.id}`, "Edit Article", "Edit")
             newsDiv.appendChild(editFormButton)
             editFormButton.addEventListener("click", function(){
                 newsDiv.appendChild(newsForm.editNewsForm(article))
 
-            let deleteFormButton = HtmlBuilder.elementBuilder("button", `delete--${article.id}`, "Delete Article", "Delete")
-            newsDiv.appendChild(deleteFormButton)
-            deleteFormButton.addEventListener("click", newsEvent.handleDelete)
             })
             
-            childArticle.appendChild(newsDiv, )
+            childArticle.appendChild(newsDiv)
            
         }))},
         childArticleContainer() {
