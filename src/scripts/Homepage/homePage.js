@@ -1,5 +1,6 @@
 import htmlBuilder from "../HtmlBuilder.js"
 import homeEvent from "./homeEventListener.js"
+import login from "../sessionStorage/login.js";
 
 let mainArticle = document.getElementById("home-section")
 
@@ -13,8 +14,10 @@ export default {
         homePageArticle.appendChild(htmlBuilder.elementBuilder("input", "Email", "Email"))
 
         let userLoginButton = htmlBuilder.elementBuilder("button", "userLogin", "Login")
-        userLoginButton.addEventListener("click", function(){
-            console.log("Login")
+        //login session storage handler.
+        userLoginButton.addEventListener("click", event => {
+            event.preventDefault();
+            login.storeLogin();
         })
         homePageArticle.appendChild(userLoginButton)
         let registerButton = htmlBuilder.elementBuilder("button", "registerUser", "Register")
