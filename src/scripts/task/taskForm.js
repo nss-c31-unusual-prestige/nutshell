@@ -8,6 +8,7 @@ export default {
     taskFormSection() {
         let newDocFragment = document.createDocumentFragment()
         let sectionTesk = HtmlBuilder.elementBuilder("section", "taskFormSection")
+        sectionTesk.id = "taskForm"
 
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:", "name"))
         sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name:", ""))
@@ -25,6 +26,7 @@ export default {
         //sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "checkBox", "Completation"))
 
         let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Add Task ", "Save")
+        saveButtonForm.id = "save"
 
         saveButtonForm.addEventListener("click", formEvent.handleSave)
         const articleSection = HtmlBuilder.elementBuilder("section", "taskSection")
@@ -36,6 +38,7 @@ export default {
 
      editTaskForm(taskObject){
         let taskEditArticle = HtmlBuilder.elementBuilder("article", "taskEditArticle")
+        taskEditArticle.id = "editArticle"
 
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name:"))
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-name-${taskObject.id}`, undefined, taskObject.name))

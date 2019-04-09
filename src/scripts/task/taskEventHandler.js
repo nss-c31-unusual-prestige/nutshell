@@ -25,7 +25,7 @@ export default {
         let name = document.getElementById(`edit-task-name-${taskId}`)
         let description = document.getElementById(`edit-task-description-${taskId}`)
         let completeDate = document.getElementById(`edit-task-completeDate-${taskId}`)
-        let checkbox =document.getElementById(`edit-task-checkbox-${taskId}`).value
+        let checkbox =document.getElementById(`edit-task-checkbox-${taskId}`)
 
         let editTask = {
             name: name,

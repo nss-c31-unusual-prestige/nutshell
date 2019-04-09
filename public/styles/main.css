@@ -11,26 +11,28 @@
     width: 20%;
 }
 button {
+    flex-wrap: wrap;
     background-color: blue;
     color: white;
-    width: 20%;
-    height: 20px
+    width: 30%;
+    height: 20px;
 }
     max-width: 100px;
     max-height: 160px;
-   
+
 }
 
 .newsDiv{
-    border-style: solid;
-    border-color: black;
-    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    color: lightblue;
+    border-style: solid;
+    border-color: black;
     max-width: 150px;
     max-height: 160px;
-    
+    padding-top: 5px;
+
 }
 
 
@@ -43,4 +45,52 @@ button {
     margin-left: 25px;
     border-style: solid;
     border-color: blue;
+}
+#childDiv{
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(227, 239, 243);
+    padding: 2px;
+    flex-wrap: wrap;
+    max-width: 350px;
+    max-height: 180px;
+    border: 2px solid black;
+}
+#editArticle{
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    flex-wrap: wrap;
+    padding:2px;
+    border: 2px solid black;
+    float: left;
+    margin-left: 260px;
+    max-height: 180px;
+    width: 350px;
+}
+#delete{
+    display: flex;
+    color: white;
+    font: bold;
+    background-color: red;
+    float: left;
+}
+#editButton{
+    display: flex;
+    color: white;
+    background-color:blue;
+    float: right;
+}
+#save{
+    display: flex;
+    background-color:green;
+    width: 100px;
+    float: left;
+}
+#taskForm{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px black solid;
+    padding: 2px 1px 1px 1px;
 }

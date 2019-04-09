@@ -9,7 +9,7 @@ import newsEvent from "./newsEventHandler.js"
 export default {
     // Function to list all News articles to DOM
     listAllNews(){
-        
+
         let childArticle = document.querySelector("#childNewsArticle")
         HtmlBuilder.clearElement(childArticle)
         apiManager.getAll("articles")
@@ -20,8 +20,7 @@ export default {
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `Summary: ${article.summary}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `URL: ${article.url}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTimeStamp--${article.id}`, `Uploaded:${article.timeStamp}`))
-            
-            
+
             let deleteFormButton = HtmlBuilder.elementBuilder("button", `delete--${article.id}`, "Delete Article", "Delete")
             deleteFormButton.addEventListener("click", newsEvent.handleDelete)
             newsDiv.appendChild(deleteFormButton)
@@ -32,9 +31,9 @@ export default {
                 newsDiv.appendChild(newsForm.editNewsForm(article))
 
             })
-            
+
             childArticle.appendChild(newsDiv)
-           
+
         }))},
         childArticleContainer() {
             let articleContainer = document.getElementById("articles-section");
