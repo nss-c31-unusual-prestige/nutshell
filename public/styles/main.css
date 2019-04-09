@@ -51,7 +51,7 @@ button {
     flex-direction: column;
     background-color:rgb(227, 239, 243);
     flex-wrap: wrap;
-    max-width: 350px;
+    max-width: 550px;
     max-height: 180px;
     padding: 2px;
     border: 2px solid black;
@@ -73,19 +73,20 @@ button {
     color: white;
     font: bold;
     background-color: red;
+    width: 400px;
     float: left;
 }
 #editButton{
     display: flex;
     color: white;
-    width: 300px;
+    width: 400px;
     background-color: blue;
     float: right;
 }
 #save{
     display: flex;
     background-color:green;
-    width: 300px;
+    width: 400px;
     float: left;
 }
 #taskForm{
