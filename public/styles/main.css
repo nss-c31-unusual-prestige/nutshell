@@ -1,5 +1,6 @@
 #display-area {
     display: flex;
+    flex-direction: column;
 }
 
 #newsFormArticle {
@@ -110,10 +111,10 @@ button {
     display: flex;
     flex-flow: column wrap;
     justify-content: left;
-    position: absolute;
+    /* position: absolute; */
     right: 0px;
     width: 300px;
-    border: 3px solid #73AD21;
+    
     padding: 10px;
 }
 
@@ -125,4 +126,11 @@ button {
     min-height: 600px;
     max-height: 600px;
     max-width: 300px;
+    border: 3px solid #73AD21;
+}
+
+#home-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
 }
