@@ -78,13 +78,14 @@ button {
 #editButton{
     display: flex;
     color: white;
+    width: 300px;
     background-color: blue;
     float: right;
 }
 #save{
     display: flex;
     background-color:green;
-    width: 100px;
+    width: 300px;
     float: left;
 }
 #taskForm{
