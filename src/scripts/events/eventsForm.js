@@ -31,9 +31,6 @@ export default {
 
         //add an event listener to button to actually save data to the API.
         saveFormButton.addEventListener("click", formEvent.handleSave)
-
-
-
         //add an event listener to button to delete the selected event
         // deleteFormButton.addEventListener("click", formEvent.handleDelete)
         //append the button, article, and fragments to DOM
@@ -53,12 +50,12 @@ export default {
         //create label and input elements for data to be passed in by user
         //name input was using edit-event-name-- to target input field
         eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Name: "));
-        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-name--${eventId}`, undefined, eventsObject.eventName))
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-name--${eventId}`, undefined, eventId.eventName))
         //date input
         eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Date: "));
-        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-date--${eventId}`, undefined, eventsObject.eventDate))
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-date--${eventId}`, undefined, eventId.eventDate))
         //location input
         eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Location: "));
-        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-location--${eventId}`,undefined, eventsObject.eventLocation))
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-location--${eventId}`,undefined, eventId.eventLocation))
     }
 }
