@@ -2,6 +2,9 @@ import apiManager from "../apiManager";
 import HtmlBuilder from "../HtmlBuilder";
 import messageField from "./messageField";
 
+let currentId = sessionStorage.getItem("id");
+currentId = parseInt(currentId);
+
 //reference to the section of the DOM the messageBox will be appended to after all the messages have been built.
 const messageSection = document.getElementById("messages-section");
 //(elementType, elementId, elementTextContent, elementValue). Section all messages will appear on.
@@ -30,17 +33,17 @@ export default {
         })
         return button;
     },
-    assembleMessage: function (userObject, message, currentUserId) {
+    assembleMessage: function (userObject, message) {
         //create the divider that contains the user name and message.
         const messageDiv = HtmlBuilder.elementBuilder("DIV", `message--${message.id}`, undefined, undefined);
         //create username HTML.
-        const nameTag = HtmlBuilder.elementBuilder("SPAN", `userbox--${userObject.id}`, `${userObject.user}: `, undefined);
+        const nameTag = HtmlBuilder.elementBuilder("SPAN", `userbox--${userObject.id}`, `${userObject.name}: `, undefined);
         //create message HTML.
         const element = HtmlBuilder.elementBuilder("SPAN", `line--${message.id}`, message.message, undefined);
         //append name and element to the container.
         messageDiv.appendChild(nameTag);
         messageDiv.appendChild(element);
-        if (userObject.id === currentUserId) {
+        if (userObject.id === currentId) {
             const editButton = this.createEditButton(message.id);
             messageDiv.appendChild(editButton);
         }
@@ -50,19 +53,12 @@ export default {
     createMessages: function () {
         //clears the message box before appending the new message list.
         HtmlBuilder.clearElement(messageBox);
-        //create scollbar.
-        messageBox.style.overflowY = "auto";
-        //floating chatbox.
-        messageSection.style.position = "absolute";
-        messageBox.style.minHeight = "600px"
-        messageBox.style.maxHeight = "600px"
-        messageBox.style.maxWidth = "300px"
         //calls the API manager to pull the messages from the database.
         apiManager.getAll("messages").then(messages => {
             //then for each message, pass the values contained in the database to build the message.
             messages.forEach(message => {
                 apiManager.getOne("users", message.userId).then(user => {
-                    this.assembleMessage(user, message, 4);
+                    this.assembleMessage(user, message);
                     return
                 }).then(next => {
                     this.printMessages();
@@ -77,7 +73,7 @@ export default {
             messages.forEach(message => {
                 if (message.id === messages.length) {
                     apiManager.getOne("users", message.userId).then(user => {
-                        this.assembleMessage(user, message, 4);
+                        this.assembleMessage(user, message);
                     }).then(next => {
                         this.printMessages();
                     })
