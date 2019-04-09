@@ -19,7 +19,7 @@ export default {
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCheckbox--${task.id}`, `${task.checkbox}`))
 
                 let deleteFormButtom = HtmlBuilder.elementBuilder("button", `delete--${task.id}`, "Delete Task", "Delete")
-                deleteFormButtom.id = "delete"
+                deleteFormButtom.classList = "delete"
                 deleteFormButtom.addEventListener("click", event.handleDelete)
                 childDiv.appendChild(deleteFormButtom)
 

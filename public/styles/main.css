@@ -50,10 +50,10 @@ button {
     display: flex;
     flex-direction: column;
     background-color:rgb(227, 239, 243);
-    padding: 2px;
     flex-wrap: wrap;
     max-width: 350px;
     max-height: 180px;
+    padding: 2px;
     border: 2px solid black;
 }
 #editArticle{
@@ -64,11 +64,11 @@ button {
     padding:2px;
     border: 2px solid black;
     float: left;
-    margin-left: 260px;
+    margin-left:260px;
     max-height: 180px;
     width: 350px;
 }
-#delete{
+.delete{
     display: flex;
     color: white;
     font: bold;
@@ -78,7 +78,7 @@ button {
 #editButton{
     display: flex;
     color: white;
-    background-color:blue;
+    background-color: blue;
     float: right;
 }
 #save{
