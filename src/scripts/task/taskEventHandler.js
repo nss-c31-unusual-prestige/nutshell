@@ -28,13 +28,15 @@ export default {
         let checkbox =document.getElementById(`edit-task-checkbox-${taskId}`)
 
         let editTask = {
-            name: name,
-            description: description,
-            completeDate: completeDate,
-            checkbox: checkbox
+            name: name.value,
+            description: description.value,
+            completeDate: completeDate.value,
+            checkbox: checkbox.value,
+            id:taskId
+
         }
         console.log(editTask)
-        apiManger.postAll("tasks", `${taskId}`, editTask)
+        apiManger.patchAll("tasks", `${taskId}`, editTask)
             .then(() => taskDom.listAllTask())
     },
     handleDelete() {

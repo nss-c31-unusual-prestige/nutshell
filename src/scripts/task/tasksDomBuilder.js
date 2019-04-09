@@ -17,10 +17,6 @@ export default {
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newDescription--${task.id}`, `${task.description}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCompleteDate--${task.id}`, `${task.completeDate}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCheckbox--${task.id}`, `${task.checkbox}`))
-                if(taskObject.isCompleted === true) {
-                 let editButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Task Complete")
-                 editButtonForm.addEventListener("click", handleComplete)
-                }
 
                 let deleteFormButtom = HtmlBuilder.elementBuilder("button", `delete--${task.id}`, "Delete Task", "Delete")
                 deleteFormButtom.classList = "delete"
