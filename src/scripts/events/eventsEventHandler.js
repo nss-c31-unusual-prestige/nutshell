@@ -28,9 +28,26 @@ export default {
             eventsDom.listAllEvents()
         })
     },
-    handleEdit: () => {
+    handleEdit: (event) => {
         console.log(event)
         console.log("Edit button clicked!!", event.target.id.split("--")[1])
+        let eventId = event.target.id.split("--")[1]
+        console.log(eventId)
+        let eventName = document.getElementById(`eventName--${eventId}`)
+        console.log(eventName)
+        let eventDate = document.getElementById(`eventDate--${eventId}`)
+        let eventLocation = document.getElementById(`eventLocation--${eventId}`)
+        let editedEvent = {
+            eventName: eventName.value,
+            eventDate: eventDate.value,
+            eventLocation: eventLocation.value,
+            id: eventId
+        }
+        console.log(document.getElementById("eventLocation--1").value)
+        console.log(editedEvent)
+        apiManager.patchAll("events", `${eventId}`, editedEvent).then(() => {
+            eventsDom.listAllEvents()
+        })
     },
     handleDelete: () => {
         console.log(event)

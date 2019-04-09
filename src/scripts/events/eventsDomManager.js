@@ -1,6 +1,7 @@
 import apiManager from "../apiManager.js";
 import HtmlBuilder from "../HtmlBuilder.js"
 import formEvent from "../events/eventsEventHandler.js"
+import formEdit from "../events/eventsForm.js"
 
 export default {
     //runs throuh a forEach loop and appends data to the DOM.
@@ -9,8 +10,8 @@ export default {
         let childEvent = document.getElementById("childEventsArticle")
         HtmlBuilder.clearElement(childEvent);
         apiManager.getAll("events")
+        // console.log("eventsArray", events)
             .then(events => events.forEach(event => {
-                console.log("eventsArray", events)
                 //targets event by id and returns the name of the event and then appends to the DOM.
                 childEvent.appendChild(HtmlBuilder.elementBuilder("article", `eventName--${event.id}`, `${event.eventName}`))
                 //targets event by id and returns the date of the event and then appends to the DOM.
@@ -26,7 +27,7 @@ export default {
                 //create a button to allow the user to edit an event
                 let editFormButton = HtmlBuilder.elementBuilder("button", `eventToEdit--${event.id}`, "Edit Event", "Edit")
                 //add an event listener to edit button to bring up the edit form
-                editFormButton.addEventListener("click", formEvent.handleEdit)
+                editFormButton.addEventListener("click", formEdit.editEventForm);
 
 
                 //append the edit button to each event

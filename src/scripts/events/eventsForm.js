@@ -42,5 +42,23 @@ export default {
         // eventArticle.appendChild(deleteFormButton)
         eventDocFragment.appendChild(eventArticle)
         eventContainer.appendChild(eventDocFragment)
+    },
+    editEventForm(eventsObject) {
+        let eventsEditDiv = HtmlBuilder.elementBuilder("div", "eventsEditDiv");
+        eventsEditDiv.className = ("eventsEditDiv");
+        let eventId = eventsObject.target.id.split("--")[1]
+        console.log(eventId)
+        console.log(eventsObject)
+
+        //create label and input elements for data to be passed in by user
+        //name input was using edit-event-name-- to target input field
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Name: "));
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-name--${eventId}`, undefined, eventsObject.eventName))
+        //date input
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Date: "));
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-date--${eventId}`, undefined, eventsObject.eventDate))
+        //location input
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Event Location: "));
+        eventsEditDiv.appendChild(HtmlBuilder.elementBuilder("input", `edit-event-location--${eventId}`,undefined, eventsObject.eventLocation))
     }
 }
