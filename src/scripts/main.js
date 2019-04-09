@@ -1,7 +1,12 @@
+import apiManager from "./apiManager.js";
+import newsFeedDOM from "./newsFeed/newsDomManage.js"
+import newsForm from "./newsFeed/newsForm.js"
+import newsEventHandler from "./newsFeed/newsEventHandler.js"
+import homepage from "./Homepage/homePage.js"
+import messageHandler from "./chat/messages.js"
+// newsForm.newsForm()
+// newsFeedDOM.childArticleContainer()
+// newsFeedDOM.listAllNews()
 
-<<<<<<< HEAD
-taskForm.taskFormSection()
-tasksDomBuilder.listAllTask()
-// taskEventHandler.listAllTask()
-=======
->>>>>>> 151c0d586744b8f8278e38a11fd555d350ea6433
+homepage.homePage()
+messageHandler.createChat();
