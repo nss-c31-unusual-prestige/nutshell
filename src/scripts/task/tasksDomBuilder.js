@@ -12,16 +12,19 @@ export default {
         apiManager.getAll("tasks")
         .then(tasks => tasks.forEach(task => {
             let childDiv = HtmlBuilder.elementBuilder("div", `childDiv-${task.id}`)
+                childDiv.id = "childDiv"
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newName--${task.id}`, `${task.name}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newDescription--${task.id}`, `${task.description}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCompleteDate--${task.id}`, `${task.completeDate}`))
                 childDiv.appendChild(HtmlBuilder.elementBuilder("section", `newCheckbox--${task.id}`, `${task.checkbox}`))
 
                 let deleteFormButtom = HtmlBuilder.elementBuilder("button", `delete--${task.id}`, "Delete Task", "Delete")
+                deleteFormButtom.classList = "delete"
                 deleteFormButtom.addEventListener("click", event.handleDelete)
                 childDiv.appendChild(deleteFormButtom)
 
                 let editFormButton = HtmlBuilder.elementBuilder("button",`save-${task.id}`, "Task Edit", "Edit")
+                editFormButton.id = "editButton"
                 childDiv.appendChild(editFormButton)
                 editFormButton.addEventListener("click", function () {
                     childDiv.appendChild(taskForm.editTaskForm(task))

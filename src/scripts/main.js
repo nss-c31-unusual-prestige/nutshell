@@ -1,3 +1,11 @@
+
+import taskForm from "./task/taskForm.js"
+import tasksDomBuilder from "./task/tasksDomBuilder.js";
+import taskEventHandler from "./task/taskEventHandler.js";
+
+taskForm.taskFormSection()
+tasksDomBuilder.listAllTask()
+
 import apiManager from "./apiManager.js";
 import newsFeedDOM from "./newsFeed/newsDomManage.js"
 import newsForm from "./newsFeed/newsForm.js"
