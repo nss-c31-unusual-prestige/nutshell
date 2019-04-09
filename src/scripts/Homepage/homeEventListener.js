@@ -8,14 +8,17 @@ const homeEventListener = {
         let user = document.getElementById("newUsername")
         let email = document.getElementById("newEmail")
         let name = document.getElementById("newName")
-
+        alert("Registered new user!");
         console.log(user)
         console.log(email)
         let newUser = {
-            newUserName: user.value,
-            newEmail: email.value,
-            newName: name.value
+            user: user.value,
+            email: email.value,
+            name: name.value
         }
+        user.value = "";
+        email.value = "";
+        name.value = "";
         console.log(newUser)
         apiManager.postAll("users", newUser)
     },

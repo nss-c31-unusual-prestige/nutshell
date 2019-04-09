@@ -13,3 +13,13 @@ newsFeedDOM.listAllNews()
 // import messageHandler from "./chat/messages.js"
 
 // messageHandler.createChat();
+
+import homepage from "./Homepage/homePage.js"
+import messageHandler from "./chat/messages.js"
+// newsForm.newsForm()
+// newsFeedDOM.childArticleContainer()
+// newsFeedDOM.listAllNews()
+
+homepage.homePage()
+messageHandler.createChat();
+
