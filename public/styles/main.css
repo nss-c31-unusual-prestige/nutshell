@@ -15,7 +15,7 @@
 button {
     flex-wrap: wrap;
     background-color: blue;
-    text-align: center;
+    align-items: center;
     color: white;
     width: 30%;
     height: 20px;
@@ -80,7 +80,7 @@ button {
     display: flex;
     color: white;
     font: bold;
-    align-content: center;
+    text-align: center;
     background-color: red;
     width: 200px;
     float: left;
