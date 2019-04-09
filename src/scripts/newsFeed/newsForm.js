@@ -29,6 +29,7 @@ export default {
         articleContainer.appendChild(newsDocFragment)
     },
     
+    
         editNewsForm(newsObject) {
             // let currentNewsDivid = event.target.parentNode.id.split("-")[1]
             // let currentNewsDiv = document.getElementById(`newsDiv-${newsObject.id}`)
