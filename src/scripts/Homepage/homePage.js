@@ -4,18 +4,23 @@ import login from "../sessionStorage/login.js";
 
 let mainArticle = document.getElementById("home-section")
 let currentUser = sessionStorage.getItem("user");
+let currentId = sessionStorage.getItem("id");
+let currentEmail = sessionStorage.getItem("email");
+let currentName = sessionStorage.getItem("name");
 
 export default {
     homePage() {
         let homePageArticle = htmlBuilder.elementBuilder("article", "homePageArticle")
         homePageArticle.appendChild(htmlBuilder.elementBuilder("h1", "homeTitle", "Unusual Homepage"))
         if (currentUser) {
-            homePageArticle.appendChild(htmlBuilder.elementBuilder("h2", "welcome" `Welcome ${currentUser.name}`));
+            console.log(currentUser);
+            homePageArticle.appendChild(htmlBuilder.elementBuilder("h2", "welcome", `Welcome, ${currentName}.`));
             const logOutButton = htmlBuilder.elementBuilder("button", "logout", "Log Out");
             logOutButton.addEventListener("click", event => {
                 event.preventDefault();
                 login.logOut();
             })
+            homePageArticle.appendChild(logOutButton);
         } else {
             homePageArticle.appendChild(htmlBuilder.elementBuilder("label", undefined, "Username"))
             homePageArticle.appendChild(htmlBuilder.elementBuilder("input", "Username", "User"))
