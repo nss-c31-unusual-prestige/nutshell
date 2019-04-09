@@ -5,6 +5,19 @@
 #newsFormArticle {
     display: flex;
     flex-direction: column;
+
+}
+#taskFormSection{
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+}
+button {
+    background-color: blue;
+    color: white;
+    width: 20%;
+    height: 20px
+}
     max-width: 100px;
     max-height: 160px;
 
