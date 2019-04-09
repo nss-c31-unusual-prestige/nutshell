@@ -7,8 +7,8 @@ import messageHandler from "./chat/messages.js"
 // newsForm.newsForm()
 // newsFeedDOM.childArticleContainer()
 // newsFeedDOM.listAllNews()
-import eventForm from "./events/eventsForm.js"
-import eventsDom from "./events/eventsDomManager.js"
+import eventForm from "../events/eventsForm.js"
+import eventsDom from "../events/eventsDomManager.js"
 
 //call event form from eventsForm
 eventForm.eventForm()
