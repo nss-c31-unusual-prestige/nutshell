@@ -23,8 +23,6 @@ export default {
         let checkbox = sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "newCheckbox", "checkbox"))
         checkbox.setAttribute("type", "checkbox")
 
-        //sectionTesk.appendChild(HtmlBuilder.elementBuilder("input", "checkBox", "Completation"))
-
         let saveButtonForm = HtmlBuilder.elementBuilder("button", undefined, "Add Task ", "Save")
         saveButtonForm.id = "save"
 
@@ -52,6 +50,7 @@ export default {
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Done"))
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-checkbox-${taskObject.id}`, undefined, taskObject.checkbox))
         taskEditArticle.setAttribute("type", "checkbox")
+
 
         let editButtonForm = HtmlBuilder.elementBuilder("button", `edit-${taskObject.id}`, "Save", "edit-save")
         editButtonForm.addEventListener("click", formEvent.handleEdit)

@@ -44,5 +44,5 @@ export default {
 
         apiManger.delFetch("tasks", taskId)
             .then(() => taskDom.listAllTask())
-    }
+    },
 }
