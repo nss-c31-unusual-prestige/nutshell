@@ -1,6 +1,6 @@
 #display-area {
     display: flex;
-    flex-direction: column;
+    flex-flow: column wrap;
 }
 
 #newsFormArticle {
@@ -108,10 +108,10 @@ button {
 }
 
 #messages-section {
+    align-self: center;
     display: flex;
     flex-flow: column wrap;
     justify-content: left;
-    /* position: absolute; */
     right: 0px;
     width: 300px;
     
@@ -123,8 +123,8 @@ button {
     flex-flow: column wrap;
     justify-content: flex-end;
     overflow-y: auto;
-    min-height: 600px;
-    max-height: 600px;
+    min-height: 400px;
+    max-height: 400px;
     max-width: 300px;
     border: 3px solid #73AD21;
 }
