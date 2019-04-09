@@ -44,7 +44,7 @@ export default {
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-name-${taskObject.id}`, undefined, taskObject.name))
 
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Description:"))
-        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-decription-${taskObject.id}`, undefined, taskObject.description))
+        taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-description-${taskObject.id}`, undefined, taskObject.description))
 
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Complete Date:"))
         taskEditArticle.appendChild(HtmlBuilder.elementBuilder("input", `edit-task-completeDate-${taskObject.id}`, undefined, taskObject.completeDate))
