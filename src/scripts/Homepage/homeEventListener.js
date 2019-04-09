@@ -31,7 +31,7 @@ const homeEventListener = {
         registerFormArticle.appendChild(HtmlBuilder.elementBuilder("label", undefined, "Name"))
         registerFormArticle.appendChild(HtmlBuilder.elementBuilder("input", "newName", "Name"))
 
-        
+
         console.log(homeEventListener)
         let saveUserbutton = HtmlBuilder.elementBuilder("button", "saveUser", "Register")
         saveUserbutton.addEventListener("click", homeEventListener.homeSave)

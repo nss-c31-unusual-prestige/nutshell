@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 import homepage from "./Homepage/homePage.js"
 homepage.homePage()
@@ -31,3 +32,8 @@ import tasksDomBuilder from "./task/tasksDomBuilder.js";
 taskForm.taskFormSection()
 tasksDomBuilder.listAllTask()
 
+=======
+import homepage from "./Homepage/homePage.js"
+
+homepage.homePage()
+>>>>>>> ecd43a3fdd6c780ebe925757634891324d8eb885

@@ -11,7 +11,7 @@ currentId = parseInt(currentId);
 export default {
     // Function to list all News articles to DOM
     listAllNews(){
-        
+
         let childArticle = document.querySelector("#childNewsArticle")
         HtmlBuilder.clearElement(childArticle)
         apiManager.getAll("articles")
@@ -22,6 +22,10 @@ export default {
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTitle--${article.id}`, `Title: ${article.newsTitle}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsSummary--${article.id}`, `Summary: ${article.summary}`))
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsUrl--${article.id}`, `URL: ${article.url}`))
+
+            
+
+  
             newsDiv.appendChild(HtmlBuilder.elementBuilder("article", `newsTimeStamp--${article.id}`, `Uploaded: ${article.timeStamp}`))
             
             
@@ -35,8 +39,10 @@ export default {
                 newsDiv.appendChild(newsForm.editNewsForm(article))
 
             })
-            
+
             childArticle.appendChild(newsDiv)
+
+
            
         }}))},
         childArticleContainer() {

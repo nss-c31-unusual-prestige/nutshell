@@ -13,8 +13,14 @@
     width: 20%;
 }
 button {
+    flex-wrap: wrap;
     background-color: blue;
+    text-align: center;
     color: white;
+    width: 30%;
+    height: 20px;
+    max-width: 100px;
+    max-height: 160px;
 }
 
 .newsDiv {
@@ -24,8 +30,13 @@ button {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 150px;
-    max-height: 160px;
+    color: lightblue;
+    border-style: solid;
+    border-color: black;
+    max-width: 2400px;
+    max-height: 180px;
+    padding-top: 5px;
+
 
 }
 
@@ -39,6 +50,60 @@ button {
     margin-left: 25px;
     border-style: solid;
     border-color: blue;
+}
+
+#childDiv{
+    display: flex;
+    flex-direction: column;
+    background-color:rgb(227, 239, 243);
+    flex-wrap: wrap;
+    max-width: 240px;
+    max-height: 180px;
+    padding: 2px;
+    border: 2px solid black;
+}
+#editArticle{
+    display: flex;
+    flex-direction: column;
+    background-color: beige;
+    flex-wrap: wrap;
+    padding:2px;
+    border: 2px solid black;
+    float: left;
+    margin-left:260px;
+    max-height: 180px;
+    width: 350px;
+}
+.delete{
+    display: flex;
+    color: white;
+    font: bold;
+    align-content: center;
+    background-color: red;
+    width: 200px;
+    float: left;
+}
+#editButton{
+    display: flex;
+    color: white;
+    text-align: center;
+    width: 200px;
+    background-color: blue;
+    float: right;
+}
+#save{
+    display: flex;
+    background-color:green;
+    text-align: center;
+    width: 200px;
+    float: left;
+}
+#taskForm{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: 1px black solid;
+    padding: 2px 1px 1px 1px;
 }
 
 #messages-section {
