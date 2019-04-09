@@ -2,13 +2,13 @@ import htmlBuilder from "../HtmlBuilder.js"
 import homeEvent from "./homeEventListener.js"
 import login from "../sessionStorage/login.js";
 import messageEventHandler from "../chat/messageEventHandler.js";
-import apiManager from "./apiManager.js";
-import newsFeedDOM from "./newsFeed/newsDomManage.js"
-import newsForm from "./newsFeed/newsForm.js"
-import eventsDom from "./events/eventsDomManager.js"
-import eventsForm from "./events/eventsForm.js"
-import taskForm from "./task/taskForm.js"
-import tasksDomBuilder from "./task/tasksDomBuilder.js";
+import apiManager from "../apiManager.js";
+import newsFeedDOM from "../newsFeed/newsDomManage.js"
+import newsForm from "../newsFeed/newsForm.js"
+import eventsDom from "../events/eventsDomManager.js"
+import eventsForm from "../events/eventsForm.js"
+import taskForm from "../task/taskForm.js"
+import tasksDomBuilder from "../task/tasksDomBuilder.js";
 
 
 
