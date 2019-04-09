@@ -15,6 +15,7 @@
 button {
     flex-wrap: wrap;
     background-color: blue;
+    text-align: center;
     color: white;
     width: 30%;
     height: 20px;
@@ -34,8 +35,8 @@ button {
     color: lightblue;
     border-style: solid;
     border-color: black;
-    max-width: 150px;
-    max-height: 160px;
+    max-width: 2400px;
+    max-height: 180px;
     padding-top: 5px;
 
 
@@ -58,7 +59,7 @@ button {
     flex-direction: column;
     background-color:rgb(227, 239, 243);
     flex-wrap: wrap;
-    max-width: 550px;
+    max-width: 240px;
     max-height: 180px;
     padding: 2px;
     border: 2px solid black;
@@ -79,21 +80,24 @@ button {
     display: flex;
     color: white;
     font: bold;
+    align-content: center;
     background-color: red;
-    width: 400px;
+    width: 200px;
     float: left;
 }
 #editButton{
     display: flex;
     color: white;
-    width: 400px;
+    text-align: center;
+    width: 200px;
     background-color: blue;
     float: right;
 }
 #save{
     display: flex;
     background-color:green;
-    width: 400px;
+    text-align: center;
+    width: 200px;
     float: left;
 }
 #taskForm{
