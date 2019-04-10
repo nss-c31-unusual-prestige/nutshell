@@ -1,7 +1,3 @@
-import taskForm from "./task/taskForm.js"
-import tasksDomBuilder from "./task/tasksDomBuilder.js";
-import taskEventHandler from "./task/taskEventHandler.js";
+import homepage from "./Homepage/homePage.js"
 
-taskForm.taskFormSection()
-tasksDomBuilder.listAllTask()
-
+homepage.homePage()

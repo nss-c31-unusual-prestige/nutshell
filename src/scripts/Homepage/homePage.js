@@ -1,26 +1,50 @@
 import htmlBuilder from "../HtmlBuilder.js"
 import homeEvent from "./homeEventListener.js"
 import login from "../sessionStorage/login.js";
+import apiManager from "../apiManager.js";
+import newsFeedDOM from "../newsFeed/newsDomManage.js"
+import newsForm from "../newsFeed/newsForm.js"
+import eventsDom from "../events/eventsDomManager.js"
+import eventsForm from "../events/eventsForm.js"
+import taskForm from "../task/taskForm.js"
+import tasksDomBuilder from "../task/tasksDomBuilder.js";
+import messages from "../chat/messages.js"
+
+
+
 
 let mainArticle = document.getElementById("home-section")
 let currentUser = sessionStorage.getItem("user");
 let currentId = sessionStorage.getItem("id");
 let currentEmail = sessionStorage.getItem("email");
 let currentName = sessionStorage.getItem("name");
+const displayArea = document.getElementById("display-area")
 
 export default {
     homePage() {
         let homePageArticle = htmlBuilder.elementBuilder("article", "homePageArticle")
         homePageArticle.appendChild(htmlBuilder.elementBuilder("h1", "homeTitle", "Unusual Homepage"))
+        //when logged in.
         if (currentUser) {
             console.log(currentUser);
             homePageArticle.appendChild(htmlBuilder.elementBuilder("h2", "welcome", `Welcome, ${currentName}.`));
             const logOutButton = htmlBuilder.elementBuilder("button", "logout", "Log Out");
+            //calls the page functions when the user is active.
+            newsForm.newsForm()
+            newsFeedDOM.childArticleContainer()
+            newsFeedDOM.listAllNews()
+            eventsForm.eventForm()
+            eventsDom.childEventContainer()
+            eventsDom.listAllEvents()
+            taskForm.taskFormSection()
+            tasksDomBuilder.listAllTask()
+            messages.createChat()
             logOutButton.addEventListener("click", event => {
                 event.preventDefault();
                 login.logOut();
             })
             homePageArticle.appendChild(logOutButton);
+            //when unregistered
         } else {
             homePageArticle.appendChild(htmlBuilder.elementBuilder("label", undefined, "Username"))
             homePageArticle.appendChild(htmlBuilder.elementBuilder("input", "Username", "User"))

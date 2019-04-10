@@ -1,7 +1,8 @@
 import apiManager from "../apiManager.js"
 import newsDom from "./newsDomManage"
 
-
+let currentId = sessionStorage.getItem("id");
+currentId = parseInt(currentId);
 
 
 export default {
@@ -16,7 +17,8 @@ export default {
             newsTitle: newsTitle.value,
             url: newsUrl.value,
             summary: newsSummary.value,
-            timeStamp: new Date()
+            timeStamp: new Date(),
+            user_id: currentId
         }
         console.log(newArticle)
         // Posting new article into database and displaying all articles
